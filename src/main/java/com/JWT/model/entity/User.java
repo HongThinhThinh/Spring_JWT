@@ -1,6 +1,7 @@
-package com.JWT.model;
+package com.JWT.model.entity;
 
 
+import com.JWT.enums.RoleEnum;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
@@ -17,7 +18,7 @@ import java.util.List;
 @Setter
 @Table(name = "user")
 public class User implements UserDetails {
-    public User(Integer id, String firstName, String lastName, String username, String password, Role role) {
+    public User(Integer id, String firstName, String lastName, String username, String password, RoleEnum role) {
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
@@ -61,11 +62,11 @@ public class User implements UserDetails {
         this.password = password;
     }
 
-    public Role getRole() {
+    public RoleEnum getRole() {
         return role;
     }
 
-    public void setRole(Role role) {
+    public void setRole(RoleEnum role) {
         this.role = role;
     }
 
@@ -88,7 +89,7 @@ public class User implements UserDetails {
     private String password;
 
     @Enumerated(value = EnumType.STRING)
-    private Role role;
+    private RoleEnum role;
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {

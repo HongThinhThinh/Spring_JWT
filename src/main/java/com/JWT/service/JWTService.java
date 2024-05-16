@@ -1,7 +1,7 @@
 package com.JWT.service;
 
 
-import com.JWT.model.User;
+import com.JWT.model.entity.User;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.io.Decoders;

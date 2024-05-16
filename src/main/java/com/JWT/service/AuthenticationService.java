@@ -1,12 +1,11 @@
 package com.JWT.service;
 
 
-import com.JWT.model.AuthenticationResponse;
-import com.JWT.model.User;
+import com.JWT.model.response.AuthenticationResponse;
+import com.JWT.model.entity.User;
 import com.JWT.model.request.AuthenticationRequest;
 import com.JWT.model.request.LoginRequestDTO;
 import com.JWT.repository.UserRepository;
-import org.apache.tomcat.util.net.openssl.ciphers.Authentication;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
@@ -40,7 +39,7 @@ public class AuthenticationService {
                 .role(request.getRole())
                 .firstname(request.getFirstName())
                 .lastname(request.getLastName())
-                .Username(request.getUsername())
+                .username(request.getUsername())
                 .token(token).build();
     }
     public AuthenticationResponse authenticate(LoginRequestDTO request){
@@ -61,7 +60,7 @@ public class AuthenticationService {
                 .role(user.getRole())
                 .firstname(user.getFirstName())
                 .lastname(user.getLastName())
-                .Username(user.getUsername())
+                .username(user.getUsername())
                 .token(token).build();
     }
 

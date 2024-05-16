@@ -1,6 +1,6 @@
 package com.JWT.repository;
 
-import com.JWT.model.User;
+import com.JWT.model.entity.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

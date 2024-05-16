@@ -1,8 +1,7 @@
 package com.JWT.controller;
 
 
-import com.JWT.model.AuthenticationResponse;
-import com.JWT.model.User;
+import com.JWT.model.response.AuthenticationResponse;
 import com.JWT.model.request.AuthenticationRequest;
 import com.JWT.model.request.LoginRequestDTO;
 import com.JWT.service.AuthenticationService;
@@ -42,6 +41,7 @@ public class AuthenticationController {
     public ResponseEntity admin(){
         return ResponseEntity.ok("Admin Only");
     }
+
 
 
 

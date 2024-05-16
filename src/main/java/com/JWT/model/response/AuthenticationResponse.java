@@ -1,6 +1,7 @@
-package com.JWT.model;
+package com.JWT.model.response;
 
 
+import com.JWT.enums.RoleEnum;
 import lombok.*;
 
 @Getter
@@ -10,8 +11,8 @@ import lombok.*;
 @Builder
 public class AuthenticationResponse {
     String token;
-    String Username;
-    Role role;
+    String username;
+    RoleEnum role;
     String firstname;
     String lastname;
 

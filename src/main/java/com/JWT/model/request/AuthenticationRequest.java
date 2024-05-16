@@ -1,6 +1,6 @@
 package com.JWT.model.request;
 
-import com.JWT.model.Role;
+import com.JWT.enums.RoleEnum;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -15,5 +15,5 @@ public class AuthenticationRequest {
     String lastName;
     String username;
     String password;
-    Role role;
+    RoleEnum role;
 }
