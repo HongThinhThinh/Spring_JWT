@@ -2,6 +2,8 @@ package com.JWT.model;
 
 
 import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.Setter;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -11,6 +13,8 @@ import java.util.List;
 
 
 @Entity
+@Getter
+@Setter
 @Table(name = "user")
 public class User implements UserDetails {
     public User(Integer id, String firstName, String lastName, String username, String password, Role role) {

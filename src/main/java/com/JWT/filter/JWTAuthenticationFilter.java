@@ -25,19 +25,26 @@ public class JWTAuthenticationFilter extends OncePerRequestFilter {
 
     @Autowired
     UserDetailsServiceImp userDetail;
+// da co token
 
     @Override
     protected void doFilterInternal(@NonNull HttpServletRequest request,
                                     @NonNull HttpServletResponse response,
                                     @NonNull FilterChain filterChain) throws ServletException, IOException {
 
+        String uri = request.getRequestURI();
+        System.out.println("uri ne "+ uri);
+        System.out.println(request);
         String authHeader = request.getHeader("Authorization");
+        System.out.println("authHeader ne " + authHeader) ;
         if (authHeader == null || !authHeader.startsWith("Bearer ")) {
             filterChain.doFilter(request, response);
             return;
         }
         String token = authHeader.substring(7);
+        System.out.println(token);
         String username = jwtService.extractUsername(token);
+        System.out.println(username);
         if (username != null && SecurityContextHolder.getContext().getAuthentication() == null) {
             UserDetails userDetails = userDetail.loadUserByUsername(username);
             if (jwtService.isValid(token, userDetails)) {
